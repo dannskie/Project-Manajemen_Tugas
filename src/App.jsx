@@ -102,8 +102,8 @@ function App() {
   return (
     <div className="app-container">
       <Header
-        title="Manajemen Tugas Kuliah"
-        subtitle="Integrasi AJAX & REST API (JSONPlaceholder) dengan pemantauan deadline H-1, H-3, H-7, dan H-14"
+        title="Manajemen Tugas Semester Ini"
+        subtitle="Semangatt Mengerjakan tugas tugas yang adaa!!"
       />
       <section className="api-control-bar">
         <div className="api-info">
@@ -116,7 +116,7 @@ function App() {
             className="btn-sim"
             onClick={() => fetchTasksFromAPI(API_URL)}
           >
-            Muat Ulang API (Normal)
+            Muat Ulang API 
           </button>
           <button
             type="button"
@@ -132,7 +132,7 @@ function App() {
               fetchTasksFromAPI("https://jsonplaceholder.typicode.com/endpoint-salah-404")
             }
           >
-            Simulasi Error API
+            Simulasi Error 
           </button>
         </div>
       </section>

@@ -252,3 +252,130 @@ body {
   font-weight: 700;
   color: #475569;
 }
+
+.api-control-bar {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.api-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.api-badge {
+  background: #dbeafe;
+  color: #1e3a8a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1.5px solid #1e293b;
+  text-transform: uppercase;
+}
+
+.api-info code {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  background: #f1f5f9;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.api-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-sim {
+  background: #f8fafc;
+  color: #1e293b;
+  border: 1.5px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-sim:hover {
+  background: #e2e8f0;
+}
+
+.btn-sim.danger {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #991b1b;
+}
+
+.api-state-box {
+  background: #ffffff;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.loading-box {
+  background: #f8fafc;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #cbd5e1;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-box {
+  background: #fef2f2;
+  border-color: #dc2626;
+}
+
+.error-box h3 {
+  color: #991b1b;
+  margin-bottom: 0.4rem;
+}
+
+.error-detail {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+
+.btn-retry {
+  background: #dc2626;
+  color: #ffffff;
+  font-weight: 700;
+  border: 2px solid #1e293b;
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+}
+
+.btn-retry:hover {
+  background: #b91c1c;
+}
