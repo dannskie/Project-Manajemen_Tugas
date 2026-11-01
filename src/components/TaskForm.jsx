@@ -1,17 +1,16 @@
 import { useState } from "react";
 
-function TaskForm({ onAddTask }) {
+function TaskForm({ onAddTask, isSubmitting }) {
   const [judul, setJudul] = useState("");
   const [mataKuliah, setMataKuliah] = useState("");
   const [deadline, setDeadline] = useState("H-3");
   const [deskripsi, setDeskripsi] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!judul.trim() || !mataKuliah.trim()) return;
 
-    onAddTask({
-      id: Date.now(),
+    await onAddTask({
       judul: judul.trim(),
       mataKuliah: mataKuliah.trim(),
       deadline,
@@ -26,16 +25,17 @@ function TaskForm({ onAddTask }) {
 
   return (
     <form className="task-form" onSubmit={handleSubmit}>
-      <h2>Tambah Tugas Baru</h2>
+      <h2>Tambah Tugas Baru (POST ke API)</h2>
       <div className="form-grid">
         <div className="form-group">
           <label htmlFor="judul">Nama Tugas</label>
           <input
             id="judul"
             type="text"
-            placeholder="Contoh: Membuat UI Aplikasi React"
+            placeholder="Contoh: Integrasi Fetch API React"
             value={judul}
             onChange={(e) => setJudul(e.target.value)}
+            disabled={isSubmitting}
             required
           />
         </div>
@@ -48,6 +48,7 @@ function TaskForm({ onAddTask }) {
             placeholder="Contoh: Pemrograman Web"
             value={mataKuliah}
             onChange={(e) => setMataKuliah(e.target.value)}
+            disabled={isSubmitting}
             required
           />
         </div>
@@ -58,6 +59,7 @@ function TaskForm({ onAddTask }) {
             id="deadline"
             value={deadline}
             onChange={(e) => setDeadline(e.target.value)}
+            disabled={isSubmitting}
           >
             <option value="H-1">H-1 (Sangat Mendesak)</option>
             <option value="H-3">H-3 (Segera Dikerjakan)</option>
@@ -72,14 +74,15 @@ function TaskForm({ onAddTask }) {
         <textarea
           id="deskripsi"
           rows="2"
-          placeholder="Contoh: Kerjakan minimal 5 component dan push ke GitHub"
+          placeholder="Contoh: Menampilkan state loading, success, dan error"
           value={deskripsi}
           onChange={(e) => setDeskripsi(e.target.value)}
+          disabled={isSubmitting}
         />
       </div>
 
-      <button type="submit" className="btn-submit">
-        + Tambah
+      <button type="submit" className="btn-submit" disabled={isSubmitting}>
+        {isSubmitting ? "Mengirim ke API..." : "+ Tambah"}
       </button>
     </form>
   );
